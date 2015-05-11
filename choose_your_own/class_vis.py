@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-import pylab as pl
+from matplotlib import cm
 
 def prettyPicture(clf, X_test, y_test):
     x_min = 0.0; x_max = 1.0
@@ -19,7 +19,7 @@ def prettyPicture(clf, X_test, y_test):
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
 
-    plt.pcolormesh(xx, yy, Z, cmap=pl.cm.seismic)
+    plt.pcolormesh(xx, yy, Z, cmap=cm.seismic)
 
     # Plot also the test points
     grade_sig = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii]==0]
